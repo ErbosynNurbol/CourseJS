@@ -1,67 +1,90 @@
-//Number Booleen String Object Undefined Null Symbol
-// + - * / % 
 
-let width = 100;
-let height = 120;
 
-let p = (width+ height)*2;
-let s = width * height;
-let s2 = width*height/2;
+// let sum = 1+3*(5-4)/2;//12
 
-let r = 100;
-const pi = 3.14;
-let s3 = pi*r*r;
+// let a = true || "Hello"; //true
+// let b = false || "Ha ha ha!";//"Ha ha ha!"
+// let c = true && "Hello"; //Hello
+// let d = false && "Ha ha ha!"; //false
+// console.log("a = "+a);
+// console.log("b = "+b);
+// console.log("c = "+c);
+// console.log("d = "+d);
 
-let weight = 5;//kg
-let price = 4.5; //$ 15000 * 0.1
-let totalPrice = weight * price;
+//  let x = 15 > 3 || 3 < 15 && 3; //true
 
-let num1 = 0.1; //0000110101
-let num2 = 0.2; //0001010101
-let sum = (num1*100 + num2*100)/100; //float
+//  console.log(x);
 
-let num3 = Number.MAX_VALUE * 345324535;
-if(num3 == Infinity){
 
+//  let y = null || (undefined && "Hello");
+// console.log("y = " + y);
+
+// let num = 0;
+
+// let z = num++ || 2 && 3; //1 
+
+// console.log("z = " + z);
+
+
+// let xx = 4 + 4 * 5 && 3 > 2 || "Hello" && undefined || 3 * 2 ? "Hello World!" : false;
+//     xx = 4 + 20 && 3 > 2 || "Hello" && undefined || 6 ? "Hello World!" : false;
+//     xx = true || "Hello" && undefined || 6 ? "Hello World!" : false;
+//     xx = true || undefined || 6 ? "Hello World!" : false;
+//     xx = true || 6 ? "Hello World!" : false;
+//     xx = true ? "Hello World!" : false;
+//     xx = "Hello World!";
+// console.log("xx = " + xx);
+
+
+function sayHello(name = "World"){ //Default Value
+        console.log("Hello " + name +"!");
 }
-let num4 = Number.MAX_SAFE_INTEGER;
-let articleContent = ``;
 
+// sayHello('Nurbol');
 
-let myNull = null;
-let booNull = Boolean(myNull);
-let numNull = parseInt("Erlan"); //NaN =>Not a Number
+// const sayHello  = function(){
+//         console.log("Hello World!");
+// }
 
-/*
-let text = `<h1>
-        <a href="https://elroda.com">Elorda IT \`sdf\` </a>
-</h1>`;
-*/
+// const sayHello = () => {
+//         console.log("Hello World!");
+// }
 
-let num5  = 100;
-// /*
-//     num5 += 40; //num5  = num5 + 40;
-//     num5 -= 30; //num5 = num5 - 30;
-// */
-//     num5 %= 5; //num5 = num5 % 5;
-//     num5++; //num5 = num5 +1;
-//     ++num5;
+// sayHello();
 
-// console.log(--num5);
-// console.log(num5);
-let num7  = 120;
-let num6  = !true;
-
-let num9 = (!((!true ? 10 : -10) < -10)?10:-10)?10:-10; //
-if(!true)//Egeege hdffg 
-{
-
-}else{ //
-
+function sSqure(width,height){
+        return width * height;
 }
-console.log(num9);
+
+let s= sSqure(100,200);
+
+const sCircle = (r,pi = 3.14)=> {
+        return pi*r*r;
+}
+
+s = sCircle(100);
+
+console.log("Circle S = " + s);
+
+//5! = 5*4! = 5*4*3!;
+
+const factorial = (number) => {
+        if(number == 1) return 1;
+        return number * factorial(number-1);
+};
+
+const fac  = factorial(1000);
+console.log(fac)
 
 
 
+let fiboArr = [0,1,1,2,3,5,8,13,21,34,55,89];
 
+const fibonacci = (number)=>{
+        if(number == 0) return 0;
+        if(number == 1) return 1;
+        return fibonacci(number -2) + fibonacci(number -1);
+}
+
+console.log(fibonacci(50));
 
