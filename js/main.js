@@ -1,90 +1,106 @@
+function saveScore(score) {
+  if (score > 5) {
+    alert("No way!");
+    return;
+  }
+  //      if(score > 4){
+  //              console.log("Very good!")
+  //      }else if(score > 3){
+  //              console.log("Good!");
+  //      }else if(score > 2){
+  //              console.log("Middle!");
+  //      }else{
+  //              console.log("Get out!");
+  //      }
 
-
-// let sum = 1+3*(5-4)/2;//12
-
-// let a = true || "Hello"; //true
-// let b = false || "Ha ha ha!";//"Ha ha ha!"
-// let c = true && "Hello"; //Hello
-// let d = false && "Ha ha ha!"; //false
-// console.log("a = "+a);
-// console.log("b = "+b);
-// console.log("c = "+c);
-// console.log("d = "+d);
-
-//  let x = 15 > 3 || 3 < 15 && 3; //true
-
-//  console.log(x);
-
-
-//  let y = null || (undefined && "Hello");
-// console.log("y = " + y);
-
-// let num = 0;
-
-// let z = num++ || 2 && 3; //1 
-
-// console.log("z = " + z);
-
-
-// let xx = 4 + 4 * 5 && 3 > 2 || "Hello" && undefined || 3 * 2 ? "Hello World!" : false;
-//     xx = 4 + 20 && 3 > 2 || "Hello" && undefined || 6 ? "Hello World!" : false;
-//     xx = true || "Hello" && undefined || 6 ? "Hello World!" : false;
-//     xx = true || undefined || 6 ? "Hello World!" : false;
-//     xx = true || 6 ? "Hello World!" : false;
-//     xx = true ? "Hello World!" : false;
-//     xx = "Hello World!";
-// console.log("xx = " + xx);
-
-
-function sayHello(name = "World"){ //Default Value
-        console.log("Hello " + name +"!");
+  switch (score) {
+    case 5:
+      {
+        console.log("Good!");
+      }
+      break;
+    case 4:
+      {
+        console.log("Good!");
+      }
+      break;
+    case 3:
+      {
+        console.log("Middle!");
+      }
+      break;
+    default: {
+      console.log("Get out!");
+    }
+  }
 }
 
-// sayHello('Nurbol');
+//saveScore(5);
 
-// const sayHello  = function(){
-//         console.log("Hello World!");
+let arr = [4, 5, 6, 7, 8, 9];
+// for(let i =0;i<arr.length;i++){
+//       console.log(arr[i]);
 // }
 
-// const sayHello = () => {
-//         console.log("Hello World!");
+// for(index in arr){
+//    console.log(index);
 // }
 
-// sayHello();
+// for(value of arr){
+//      console.log(value);
+// }
 
-function sSqure(width,height){
-        return width * height;
+// let index = 10;
+// do {
+//   console.log("do while = " +arr[++index]);
+// } while (index < arr.length);
+// index = 10;
+// while (index < arr.length) {
+//   console.log("while = " + arr[++index]);
+// }
+
+
+// for(let i =2 ;i<=100;i++){
+//         let isJaisan = true;
+//         for(j=2;j<i;j++){
+//                 if(i%j==0) {
+//                         isJaisan = false;
+//                         break;
+//                 }
+//         }
+//         if(!isJaisan){
+//            continue;
+//         }
+//         console.log(i);
+// }
+
+
+// grandfor:
+// for(let num = 2 ;num<=3;num++){
+//         for(let i = 2 ;i<=20;i++){
+//                 for(j=2;j<i;j++){
+//                         if(i%j==0) break grandfor;
+//                 }
+//                 console.log(i);
+//         }
+//         console.log(num);
+// }
+
+
+// arr.forEach((item,index) =>{
+//         console.log(index);
+// });
+
+let num1 = 100;
+let num2 = 100;
+
+try{
+        let num3 = num1 / num2;
+        if(num3 == Infinity){
+           throw new Error("Bolindi 0 bolmasyn!!!");
+        }
+}catch(error){ 
+        alert('Error = '+ error.message);
+}finally{
+        console.log("Smile living!!!");
 }
-
-let s= sSqure(100,200);
-
-const sCircle = (r,pi = 3.14)=> {
-        return pi*r*r;
-}
-
-s = sCircle(100);
-
-console.log("Circle S = " + s);
-
-//5! = 5*4! = 5*4*3!;
-
-const factorial = (number) => {
-        if(number == 1) return 1;
-        return number * factorial(number-1);
-};
-
-const fac  = factorial(1000);
-console.log(fac)
-
-
-
-let fiboArr = [0,1,1,2,3,5,8,13,21,34,55,89];
-
-const fibonacci = (number)=>{
-        if(number == 0) return 0;
-        if(number == 1) return 1;
-        return fibonacci(number -2) + fibonacci(number -1);
-}
-
-console.log(fibonacci(50));
-
