@@ -1,106 +1,85 @@
-function saveScore(score) {
-  if (score > 5) {
-    alert("No way!");
-    return;
-  }
-  //      if(score > 4){
-  //              console.log("Very good!")
-  //      }else if(score > 3){
-  //              console.log("Good!");
-  //      }else if(score > 2){
-  //              console.log("Middle!");
-  //      }else{
-  //              console.log("Get out!");
-  //      }
+// let person = {
+//   "name":'Nurbol',
+//   "age":35,
+//   "sayHello":function(time){
+//     console.log("Salem, men Nurbol!");
+//   }
+// };
 
-  switch (score) {
-    case 5:
-      {
-        console.log("Good!");
+
+// delete person.name;
+// delete person.sayHello;
+// console.log(person);
+
+// //name=Nurbol;password=1235sfd;3;email=sdfsdf@gmail.com;
+// person.sayHello();
+
+// let arr = new Array(person,"Hello",22);
+// console.log(arr);
+
+// for(var item in person){
+//   console.log(item);
+// }
+
+//Callback
+
+const introduce = (name)=>{
+  console.log("My name is "+ name);
+};
+
+const sayHello = (intro,name = "Qushtar")=>{
+  console.log("Hello "+name+"!!!!");
+  if(name != "Erlan"){
+    intro(name);
+  }
+};
+
+// sayHello("Aidana",introduce);
+
+// setTimeout(function(){
+//   sayHello(introduce,"Aidana");
+// },2000);
+
+// setInterval(() => {
+//   sayHello(introduce,"Aidana");
+// }, 1000);
+
+ async function getData(){
+  await fetch("https://www.sozdikqor.org/api/query/all",{"method":"post"}).then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
       }
-      break;
-    case 4:
-      {
-        console.log("Good!");
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+}
+getData();
+
+
+
+async function calcData(){
+   await new Promise((resolve,reject)=>{
+    try{
+      let sum = 5050;
+      let num = 100;
+      let x  =sum / num;
+      if(x == Infinity){
+        throw new Error("Bolindi 0 ge teng bolmasyn!");
       }
-      break;
-    case 3:
-      {
-        console.log("Middle!");
-      }
-      break;
-    default: {
-      console.log("Get out!");
+      resolve(x);
+    }catch(error){
+      reject(error);
     }
-  }
+   }).then((data)=>{
+    console.log("success data is:"+data);
+   }).catch((error)=>{
+    console.log("Error is:" + error);
+   });
 }
 
-//saveScore(5);
-
-let arr = [4, 5, 6, 7, 8, 9];
-// for(let i =0;i<arr.length;i++){
-//       console.log(arr[i]);
-// }
-
-// for(index in arr){
-//    console.log(index);
-// }
-
-// for(value of arr){
-//      console.log(value);
-// }
-
-// let index = 10;
-// do {
-//   console.log("do while = " +arr[++index]);
-// } while (index < arr.length);
-// index = 10;
-// while (index < arr.length) {
-//   console.log("while = " + arr[++index]);
-// }
-
-
-// for(let i =2 ;i<=100;i++){
-//         let isJaisan = true;
-//         for(j=2;j<i;j++){
-//                 if(i%j==0) {
-//                         isJaisan = false;
-//                         break;
-//                 }
-//         }
-//         if(!isJaisan){
-//            continue;
-//         }
-//         console.log(i);
-// }
-
-
-// grandfor:
-// for(let num = 2 ;num<=3;num++){
-//         for(let i = 2 ;i<=20;i++){
-//                 for(j=2;j<i;j++){
-//                         if(i%j==0) break grandfor;
-//                 }
-//                 console.log(i);
-//         }
-//         console.log(num);
-// }
-
-
-// arr.forEach((item,index) =>{
-//         console.log(index);
-// });
-
-let num1 = 100;
-let num2 = 100;
-
-try{
-        let num3 = num1 / num2;
-        if(num3 == Infinity){
-           throw new Error("Bolindi 0 bolmasyn!!!");
-        }
-}catch(error){ 
-        alert('Error = '+ error.message);
-}finally{
-        console.log("Smile living!!!");
-}
+calcData();
