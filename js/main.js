@@ -1,85 +1,63 @@
-// let person = {
-//   "name":'Nurbol',
-//   "age":35,
-//   "sayHello":function(time){
-//     console.log("Salem, men Nurbol!");
-//   }
-// };
 
+// let h1Arr = document.getElementsByClassName('title'); //document.getElementsByTagName('h1');
+// for(let index in h1Arr){
+//   h1Arr[index].innerText = "Salem Alem!!";
+// }
+// console.log(h1Arr);
 
-// delete person.name;
-// delete person.sayHello;
-// console.log(person);
+// let discraption = document.getElementById('discraption');
+// discraption.style = "font-size:25px";
+// discraption.innerText = "hello";
+// discraption.innerHTML = '<a href="https://elorda.com">Elorda IT</a>';
 
-// //name=Nurbol;password=1235sfd;3;email=sdfsdf@gmail.com;
-// person.sayHello();
+// let discraption =  document.querySelector('.title');
 
-// let arr = new Array(person,"Hello",22);
-// console.log(arr);
-
-// for(var item in person){
-//   console.log(item);
+// let subTitles =  document.querySelectorAll('h1');
+// for(var item of subTitles){
+//   item.innerHTML = 'Wa hhahaahhaha';
 // }
 
-//Callback
 
-const introduce = (name)=>{
-  console.log("My name is "+ name);
-};
+// let names = new Array('Nurbol','Erlan','Asyl','Talant','Jhon');
+// let ul = document.querySelector('#student-list');
+// for(let name of names){
+//   let li = document.createElement('li');
+//   li.innerText = name;
+//   ul.appendChild(li);
+// }
 
-const sayHello = (intro,name = "Qushtar")=>{
-  console.log("Hello "+name+"!!!!");
-  if(name != "Erlan"){
-    intro(name);
+
+const getWords = async ()=>{
+  const response = await fetch('https://www.sozdikqor.org/api/query/all',
+  {"method":'post'});
+  const words = await response.json();
+
+  let table = document.querySelector('.word-list tbody'); //Html element
+  let tbody = table.querySelector('tbody');
+  let trIndex = 1; //Number
+  for(let key in words){
+    let tr = document.createElement('tr');
+    //Index #
+    let tdIndex  = document.createElement('td');
+    tdIndex.innerText = trIndex++;
+    tr.appendChild(tdIndex);
+    //local Key
+    let td  = document.createElement('td');
+    td.innerText = key;
+    tr.appendChild(td);
+    //local value
+    for(let innerKey in words[key]){
+      let innerTd  = document.createElement('td');
+      innerTd.innerText = words[key][innerKey];
+      tr.appendChild(innerTd);
+    }
+    //
+     let tdManage = document.createElement('td');
+     tdManage.innerHTML = '<button>View</button>';
+     tr.appendChild(tdManage);
+    //tbody
+    tbody.appendChild(tr);
   }
 };
 
-// sayHello("Aidana",introduce);
-
-// setTimeout(function(){
-//   sayHello(introduce,"Aidana");
-// },2000);
-
-// setInterval(() => {
-//   sayHello(introduce,"Aidana");
-// }, 1000);
-
- async function getData(){
-  await fetch("https://www.sozdikqor.org/api/query/all",{"method":"post"}).then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('There has been a problem with your fetch operation:', error);
-    });
-}
-getData();
-
-
-
-async function calcData(){
-   await new Promise((resolve,reject)=>{
-    try{
-      let sum = 5050;
-      let num = 100;
-      let x  =sum / num;
-      if(x == Infinity){
-        throw new Error("Bolindi 0 ge teng bolmasyn!");
-      }
-      resolve(x);
-    }catch(error){
-      reject(error);
-    }
-   }).then((data)=>{
-    console.log("success data is:"+data);
-   }).catch((error)=>{
-    console.log("Error is:" + error);
-   });
-}
-
-calcData();
+getWords();

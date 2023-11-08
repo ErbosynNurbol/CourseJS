@@ -1,3 +1,31 @@
-/* 
-    Main css
-*/
+h1{
+    color: brown;
+    text-align: center;
+}
+.title{
+    color: blueviolet;
+}
+#discraption{
+    font-size: 20px;
+    color: cadetblue;
+}
+#student-list li{
+    color:#0094ff;
+    font-size:20px;
+    list-style:none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.word-list{
+    width: 100%;
+}
+.word-list thead th{
+    text-align: center;
+    font-size: 20px;
+}
+.word-list td{
+    font-size: 16;
+}
