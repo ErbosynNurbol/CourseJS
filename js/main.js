@@ -33,6 +33,7 @@ const getWords = async ()=>{
   const words = await response.json();
 
   let tbody = document.querySelector('.word-list tbody'); //Html element
+  let fragment = new DocumentFragment();
   let trIndex = 0; //Number
   for(let key in words){
     let tr = document.createElement('tr'); //Html Element
@@ -58,9 +59,11 @@ const getWords = async ()=>{
      tdManage.innerHTML = '<button>View</button>';
      tr.appendChild(tdManage);
     //tbody
-    tbody.appendChild(tr);
+    fragment.appendChild(tr);
   }
+  tbody.appendChild(fragment);
   const loadingDiv = document.querySelector('#loading');
   loadingDiv.style = 'display:none;';
 };
+
 document.addEventListener('DOMContentLoaded',getWords);
