@@ -1,42 +1,12 @@
-h1{
-    color: brown;
-    text-align: center;
-}
-.title{
-    color: blueviolet;
-}
-#discraption{
-    font-size: 20px;
-    color: cadetblue;
-}
-#student-list li{
-    color:#0094ff;
-    font-size:20px;
-    list-style:none;
+.myDiv{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: aquamarine;
+    margin-top: 100px;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-.word-list{
-    width: 100%;
-}
-.word-list thead th{
-    text-align: center;
-    font-size: 20px;
-}
-.word-list td{
-    font-size: 16;
-}
-
-.site-loading{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: white;
-    text-align: center;
-    padding-top: 150px;
+.myDiv button{
+    width: 80px;
+    height: 35px;
 }
