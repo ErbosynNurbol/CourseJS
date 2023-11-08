@@ -29,3 +29,14 @@ table, th, td {
 .word-list td{
     font-size: 16;
 }
+
+.site-loading{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    text-align: center;
+    padding-top: 150px;
+}

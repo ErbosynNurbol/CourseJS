@@ -32,32 +32,35 @@ const getWords = async ()=>{
   {"method":'post'});
   const words = await response.json();
 
-  let table = document.querySelector('.word-list tbody'); //Html element
-  let tbody = table.querySelector('tbody');
-  let trIndex = 1; //Number
+  let tbody = document.querySelector('.word-list tbody'); //Html element
+  let trIndex = 0; //Number
   for(let key in words){
-    let tr = document.createElement('tr');
+    let tr = document.createElement('tr'); //Html Element
     //Index #
     let tdIndex  = document.createElement('td');
-    tdIndex.innerText = trIndex++;
+    tdIndex.innerText = ++trIndex;
     tr.appendChild(tdIndex);
     //local Key
     let td  = document.createElement('td');
     td.innerText = key;
     tr.appendChild(td);
     //local value
-    for(let innerKey in words[key]){
+
+    let innerJson = words[key];
+
+    for(let innerKey in innerJson){
       let innerTd  = document.createElement('td');
       innerTd.innerText = words[key][innerKey];
       tr.appendChild(innerTd);
     }
-    //
+    // Manage
      let tdManage = document.createElement('td');
      tdManage.innerHTML = '<button>View</button>';
      tr.appendChild(tdManage);
     //tbody
     tbody.appendChild(tr);
   }
+  const loadingDiv = document.querySelector('#loading');
+  loadingDiv.style = 'display:none;';
 };
-
-getWords();
+document.addEventListener('DOMContentLoaded',getWords);
