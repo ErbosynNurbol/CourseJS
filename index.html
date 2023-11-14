@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/jquery.bxslider.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="myDiv">
-        <button type="button">Click me!</button>
-        <div>
-            <button type="submit">Click me!</button>
-            <button type="button">Click me!</button>
-            <a id="myLink" href="https://elorda.com">Elorda IT</a>
-        </div>
+    <div class="carousel">
+            <div class="sliders">
+                <img src="images/01.jpg" />
+                <img src="images/02.jpg" />
+                <img src="images/03.png" />
+            </div>
+            <div class="slider-btns">
+                <button type="button" class="btn-left"><img src="images/left-arrow.png"></button>
+                <button type="button" class="btn-right"><img src="images/left-arrow.png"></button>
+            </div>
+            <div class="slider-bullets"><ul></ul></div>
     </div>
-    <textarea id="txt" rows="20" style="width: 300px;"></textarea>
+
+    <div class="bxslider">
+        <div><img src="images/01.jpg" title="Coffee 1" /></div>
+        <div><img src="images/02.jpg" title="Coffee 2" /></div>
+        <div><img src="images/03.png" title="Coffee 3" /></div>
+      </div>
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

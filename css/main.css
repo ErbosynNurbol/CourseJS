@@ -1,18 +1,49 @@
-.myDiv{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    background-color: aquamarine;
-    margin-top: 100px;
+.carousel{
+    width: 600px;
+    margin:100px auto;
+    position: relative;
+    display: none;
 }
 
-.myDiv button{
-    width: 80px;
-    height: 35px;
-}
-#txt{
-  display: none;
-}
-.hidden{
+.sliders img{
+    width: 100%;
     display: none;
+}
+.slider-btns{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+}
+.slider-btns button{
+    background-color: transparent;
+    border: none;
+    max-width: 40px;
+    min-width: 40px;
+    cursor: pointer;
+}
+.slider-btns .btn-right{
+    float: right;
+}
+
+.slider-btns .btn-right img{
+    transform: rotate(180deg); 
+}
+.slider-bullets{
+    text-align: center;
+}
+.slider-bullets > ul{
+    display: inline-block;
+}
+.slider-bullets > ul li{
+    list-style: none;
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.slider-bullets > ul li.active{
+    background-color: #0094ff;
 }
